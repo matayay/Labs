@@ -1,20 +1,18 @@
-import React from "react";
-import { useState } from "react";
 import samosa from '../assets/samosimg.png';
+import { FC } from "react";
 
-const Header = () => {
-    const [count, setCount] = useState(0);
-    const [multiplier, setMultiplier] = useState(1);
+interface Props {
+    count: number;
+    multiplier: number;
+    updateCount: () => void;
+};
 
-    const updateCount = () => {
-        setCount(count + multiplier);
-    };
-
+const Header:FC<Props> = (props) => {
     return (
         <div className='Header'>
             <h1>Samosa Selector</h1>
-            <h2>Count: {count}</h2>
-            <img className='samosa' src={samosa} onClick={updateCount} />
+            <h2>Count: {props.count}</h2>
+            <img className='samosa' src={samosa} onClick={props.updateCount} />
         </div>
     )
 };
