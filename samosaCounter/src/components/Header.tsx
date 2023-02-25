@@ -1,5 +1,6 @@
 import samosa from '../assets/samosimg.png';
 import { FC } from "react";
+import './Header.css';
 
 interface Props {
     count: number;
